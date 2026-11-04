@@ -27,18 +27,18 @@ The purpose of this deployment pipeline is to build and productionize an interac
 16. `poutcome`: Direct legacy validation performance tracker parameters
 
 ## c. GitHub Repository Link
-[Add Your Live GitHub Link Webpage Coordinates Here]
+https://github.com/chuppalabits/ML-assignment2
 
 ## d. Performance Comparison Analysis Matrix
 Run your local `train.py` within your BITS Virtual Lab environment to output the computed metrics here. Below are the anticipated performance metrics using this dataset setup:
+| ML Model Name          |   Accuracy |   AUC |   Precision |   Recall |    F1 |   MCC |
+|:-----------------------|-----------:|------:|------------:|---------:|------:|------:|
+| Logistic Regression    |      0.9   | 0.902 |       0.637 |    0.347 | 0.449 | 0.422 |
+| Decision Tree          |      0.792 | 0.879 |       0.34  |    0.827 | 0.482 | 0.437 |
+| KNN                    |      0.897 | 0.855 |       0.603 |    0.346 | 0.44  | 0.406 |
+| Naive Bayes            |      0.862 | 0.823 |       0.425 |    0.508 | 0.462 | 0.386 |
+| Support Vector Machine |      0.904 | 0.897 |       0.664 |    0.355 | 0.463 | 0.44  |
 
-| ML Model Name          | Accuracy |   AUC | Precision | Recall |    F1 |   MCC |
-|:-----------------------|---------:|------:|----------:|-------:|------:|------:|
-| Logistic Regression    |    0.902 | 0.907 |     0.654 |  0.334 | 0.442 | 0.422 |
-| Decision Tree          |    0.846 | 0.887 |     0.414 |  0.771 | 0.539 | 0.485 |
-| KNN                    |    0.894 | 0.841 |     0.569 |  0.330 | 0.418 | 0.384 |
-| Naive Bayes            |    0.873 | 0.819 |     0.443 |  0.484 | 0.463 | 0.389 |
-| Support Vector Machine |    0.900 | 0.912 |     0.672 |  0.284 | 0.399 | 0.398 |
 
 ### Structural Execution Insights
 
