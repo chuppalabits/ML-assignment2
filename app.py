@@ -70,22 +70,23 @@ if uploaded_csv_data is not None:
             inferred_labels = trained_model_object.predict(X_eval_processed)
             inferred_probabilities = trained_model_object.predict_proba(X_eval_processed)[:, 1]
             
-            app_acc = accuracy_score(y_eval_raw, inferred_labels)
-            app_auc = roc_auc_score(y_eval_raw, inferred_probabilities)
-            app_prec = precision_score(y_eval_raw, inferred_labels, zero_division=0)
-            app_rec = recall_score(y_eval_raw, inferred_labels)
-            app_f1 = f1_score(y_eval_raw, inferred_labels)
-            app_mcc = matthews_corrcoef(y_eval_raw, inferred_labels)
+            # FIXED: Renamed metric variables away from 'app_' prefix
+            metric_acc = accuracy_score(y_eval_raw, inferred_labels)
+            metric_auc = roc_auc_score(y_eval_raw, inferred_probabilities)
+            metric_prec = precision_score(y_eval_raw, inferred_labels, zero_division=0)
+            metric_rec = recall_score(y_eval_raw, inferred_labels)
+            metric_f1 = f1_score(y_eval_raw, inferred_labels)
+            metric_mcc = matthews_corrcoef(y_eval_raw, inferred_labels)
             
             st.subheader(f"📈 Performance Performance Metrics Portfolio: {selected_algorithm}")
             grid_col1, grid_col2, grid_col3, grid_col4, grid_col5, grid_col6 = st.columns(6)
             
-            grid_col1.metric("Accuracy Score", f"{app_acc:.3f}")
-            grid_col2.metric("AUC ROC Trend", f"{app_auc:.3f}")
-            grid_col3.metric("Precision Index", f"{app_prec:.3f}")
-            grid_col4.metric("Sensitivity/Recall", f"{app_rec:.3f}")
-            grid_col5.metric("F1 Performance Score", f"{app_f1:.3f}")
-            grid_col6.metric("MCC Correlation Coefficient", f"{app_mcc:.3f}")
+            grid_col1.metric("Accuracy Score", f"{metric_acc:.3f}")
+            grid_col2.metric("AUC ROC Trend", f"{metric_auc:.3f}")
+            grid_col3.metric("Precision Index", f"{metric_prec:.3f}")
+            grid_col4.metric("Sensitivity/Recall", f"{metric_rec:.3f}")
+            grid_col5.metric("F1 Performance Score", f"{metric_f1:.3f}")
+            grid_col6.metric("MCC Correlation Coefficient", f"{metric_mcc:.3f}")
             
             st.markdown("---")
             
